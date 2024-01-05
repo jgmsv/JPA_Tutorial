@@ -20,7 +20,7 @@ public class App {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
 
-        // Exercise 1.1 listing all the vehicles
+        // Exercise 1.1 listing all the vehicles.
         String queryString = "SELECT vehicles FROM Vehicle vehicles";
 
         TypedQuery<Vehicle> query = entityManager.createQuery(queryString, Vehicle.class);
@@ -31,7 +31,7 @@ public class App {
 
         System.out.println("#".repeat(20) + " ----1");
 
-        // Exercise 1.2 finding the vehicle assigned to an particular spot
+        // Exercise 1.2 finding the vehicle assigned to an particular spot.
         String queryString1 = "SELECT vehicle.vehiclePlate FROM Vehicle vehicle WHERE vehicle.teacher.parkingSpot.id = 1";
 
         TypedQuery<String> query1 = entityManager.createQuery(queryString1, String.class);
@@ -43,7 +43,7 @@ public class App {
         System.out.println("#".repeat(20) + " ----2");
 
 
-        // Exercise 1.3 finding the owner of a particular vehicle
+        // Exercise 1.3 finding the owner of a particular vehicle.
 
         String queryString2 = "SELECT teacher.name FROM Vehicle vehicle WHERE vehicle.vehiclePlate = 'AA-BB-CC'";
 
